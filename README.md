@@ -104,24 +104,24 @@ fastapi==0.115.5
 
 Very similar results. Bottle has a bit higher average response time
 
-[FAST API](results/fastapi_no_sleep.html)
+[FAST API](docs/fastapi_no_sleep.html)
 
-[SANIC NO SLEEP](results/sanic_no_sleep.html)
+[SANIC NO SLEEP](docs/sanic_no_sleep.html)
 
-[BOTTLE](results/bottle_no_sleep.html)
+[BOTTLE](docs/bottle_no_sleep.html)
 
-[CherryPy](results/cherrypy_no_sleep.html)
+[CherryPy](docs/cherrypy_no_sleep.html)
 
 
 #### With sleep delay as faking "JWE" computation for example (decrypting/encrypting)
 
 Bottle has lower total number of sent requests, but still good results on Average response time
 
-[FAST API](results/fastapi_with_sleep.html)
+[FAST API](docs/fastapi_with_sleep.html)
 
-[SANIC NO SLEEP](results/sanic_with_sleep.html)
+[SANIC NO SLEEP](docs/sanic_with_sleep.html)
 
-[BOTTLE](results/bottle_sleep_gevent.html)
+[BOTTLE](docs/bottle_sleep_gevent.html)
 
-[CherryPy](results/cherrypy_with_sleep.html)
+[CherryPy](docs/cherrypy_with_sleep.html)
 
