@@ -5,7 +5,7 @@
 * Async
 * https://github.com/sanic-org/sanic 18k starts, 308 contributors
 * https://sanic.dev/en/guide/advanced/streaming.html
-
+* 85% coverage + failing tests
 Dependencies:
 ```
 sanic==24.6.0
@@ -29,7 +29,7 @@ sanic==24.6.0
 * no additional dependencies only pure python + gevent server for async I/O
 * mostly synchronous but can fake async https://bottlepy.org/docs/dev/async.html
 * https://bottle.readthedocs.io/en/latest/plugins/list.html JWT plugins
-* 
+* 90% coverage
 ````
 bottle==0.13.2
 
@@ -49,6 +49,7 @@ bottle==0.13.2
 3) [CherryPy](https://github.com/cherrypy/cherrypy)
 * multithreaded
 * 1.9k stars, contributors 121
+* 77% coverage, https://app.codecov.io/gh/cherrypy/cherrypy
 ```
 CherryPy==18.10.0
 ├── cheroot [required: >=8.2.1, installed: 10.0.1]
@@ -78,6 +79,7 @@ CherryPy==18.10.0
 4) [FastAPI](https://github.com/fastapi/fastapi)
 * Async
 * 78k stars, 780 contributors
+* 98% coverage
 ```
 fastapi==0.115.5
 ├── pydantic [required: >=1.7.4,<3.0.0,!=2.1.0,!=2.0.1,!=2.0.0,!=1.8.1,!=1.8, installed: 2.10.1]
@@ -125,3 +127,12 @@ Bottle has lower total number of sent requests, but still good results on Averag
 
 [CherryPy](docs/cherrypy_with_sleep.html)
 
+### File download
+
+
+| Server           | 1 user (5 downloads)  + avg response time | 5 users    + avg response time |     10 users     |         15 users          |
+|------------------|:-----------------------------------------:|:------------------------------:|:----------------:|:-------------------------:|
+| FastAPI          |           6.8 second  / 0.8 ms            |      36.76 seconds / 5 ms      | 49.96 / 6.82 ms  | 74.15 seconds / 10.50 ms  |
+| Sanic            |           7.9 seconds / 1.16 ms           |    27.52 seconds / 5.44 ms     | 47.74 / 9.55 ms  | 78.24 seconds /  15.15 ms |
+| Cherry           |          15.1 seconds / 1.89 ms           |    44.05 seconds / 8.37 ms     | 84.87 / 18.29 ms |        not tested         |
+| Bottle + Gevent  |           6.47 seconds / 0.7 ms           |    33.85 seconds / 5.49 ms     | 47.19 / 8.98 ms  | 73.92 seconds /  14.21 ms |
